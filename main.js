@@ -1,5 +1,9 @@
 import './style.css';
 import * as THREE from 'three';
+import spaceImage from './space.jpg';
+import siphoImage from './sipho.jpeg';
+import moonImage from './moon.jpg';
+import normalImage from './normal.jpg';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 // Setup
@@ -60,12 +64,12 @@ Array(200).fill().forEach(addStar);
 
 // Background
 
-const spaceTexture = new THREE.TextureLoader().load('space.jpg');
+const spaceTexture = new THREE.TextureLoader().load(spaceImage);
 scene.background = spaceTexture;
 
 // Avatar
 
-const siphoTexture = new THREE.TextureLoader().load('sipho.jpeg');
+const siphoTexture = new THREE.TextureLoader().load(siphoImage);
 
 const sipho = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: siphoTexture }));
 
@@ -73,8 +77,8 @@ scene.add(sipho);
 
 // Moon
 
-const moonTexture = new THREE.TextureLoader().load('moon.jpg');
-const normalTexture = new THREE.TextureLoader().load('normal.jpg');
+const moonTexture = new THREE.TextureLoader().load(moonImage);
+const normalTexture = new THREE.TextureLoader().load(normalImage);
 
 const moon = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
